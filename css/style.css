@@ -1,12 +1,7 @@
 /* Fundo da página */
 body {
-  padding-top: 90px; /* evita conteúdo atrás do header fixo */
-  
-  background-image: url(Imagens/fundo_fazenda.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  margin: 0;
+  padding-top: 100px; /* mesma altura do header para evitar sobreposição */
 
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #2e2e2e;
@@ -19,39 +14,35 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(30, 80, 160, 0.4); /* mais transparente */
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #fff;
-  padding: 0.5rem 1rem;
+
+  background-image: url('Imagens/NAV.png'); /* imagem do header/nav */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: 110px; /* altura do header */
+
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end; /* empurra o menu totalmente para a direita */
+  padding: 0 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   z-index: 9999;
 }
 
-/* Título no canto esquerdo */
-header h1 {
-  margin: 0;
-  font-size: 2.2rem;
-  line-height: 1.1;
-  white-space: normal;
-}
-
-/* Menu no canto direito, com margem para esquerda */
+/* Menu no canto direito */
 nav.menu {
   background: transparent;
-  margin-right: 1rem;
+  margin: 0; /* remove margem extra */
 }
 
 nav.menu ul {
   list-style: none;
   display: flex;
-  justify-content: flex-end;
+  gap: 1.5rem;
   padding: 0;
   margin: 0;
-  gap: 1.5rem;
+  margin-right: 5rem; /* afasta os links um pouco do canto direito */
 }
 
 nav.menu li {
@@ -64,7 +55,7 @@ nav.menu a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   transition: background-color 0.3s ease;
   border-radius: 6px;
 }
@@ -80,17 +71,14 @@ nav.menu a:hover {
     flex-direction: column;
     align-items: flex-start;
     padding: 1rem;
-  }
-
-  header h1 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
+    height: auto; /* altura automática para mobile */
   }
 
   nav.menu ul {
     flex-direction: column;
     width: 100%;
     gap: 0;
+    margin-right: 0; /* remove o afastamento no mobile */
   }
 
   nav.menu li {
@@ -102,5 +90,9 @@ nav.menu a:hover {
     padding: 1rem;
     font-size: 1.1rem;
     text-align: left;
+  }
+
+  body {
+    padding-top: 200px; /* ajuste conforme necessidade */
   }
 }
