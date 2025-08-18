@@ -1,0 +1,39 @@
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  color: #2e2e2e;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.hero-image img {
+  max-width: 500px;
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image img {
+    max-width: 100%;
+  }
+}

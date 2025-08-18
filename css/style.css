@@ -1,48 +1,43 @@
 /* Fundo da página */
 body {
   margin: 0;
-  padding-top: 100px; /* mesma altura do header para evitar sobreposição */
-
+  padding-top: 0; /* remove o espaço extra */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #2e2e2e;
   line-height: 1.6;
 }
 
-/* Estilo do cabeçalho */
+/* Header */
 header {
-  position: fixed; /* fixa no topo */
-  top: 0;
-  left: 0;
   width: 100%;
-
-  background-image: url('Imagens/NAV.png'); /* imagem do header/nav */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  height: 110px; /* altura do header */
-
+  height: 240px; /* altura do logo gigante */
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* empurra o menu totalmente para a direita */
-  padding: 0 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  justify-content: space-between; /* logo à esquerda, menu à direita */
+  padding: 0 2rem;
+  background: transparent;
   z-index: 9999;
 }
 
-/* Menu no canto direito */
-nav.menu {
-  background: transparent;
-  margin: 0; /* remove margem extra */
+/* Logo */
+.logo-container {
+  display: flex;
+  align-items: center;
 }
 
+.logo {
+  max-height: 220px; /* logo bem grande */
+  width: auto;
+}
+
+/* Menu */
 nav.menu ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
-  padding: 0;
+  gap: 2rem; /* espaço entre os itens */
   margin: 0;
-  margin-right: 5rem; /* afasta os links um pouco do canto direito */
+  padding: 0;
+  margin-right: 10rem; /* aproxima o menu da esquerda */
 }
 
 nav.menu li {
@@ -50,49 +45,72 @@ nav.menu li {
 }
 
 nav.menu a {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.5rem;
-  transition: background-color 0.3s ease;
+  font-size: 2rem; /* fonte grande */
+  color: #2e2e2e;
+  padding: 0.5rem 1rem;
   border-radius: 6px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Efeito hover azul moderno */
+nav.menu a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: #007BFF; /* azul */
+  transition: width 0.3s ease;
+}
+
+nav.menu a:hover::after {
+  width: 100%;
 }
 
 nav.menu a:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-  color: #e0e7ff;
+  color: #007BFF; /* azul no hover */
+}
+
+/* Espaço entre header e conteúdo */
+main {
+  margin-top: 20px; /* ajusta distância do header */
+  width: 90%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 0;
 }
 
 /* Responsivo */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   header {
     flex-direction: column;
-    align-items: flex-start;
+    height: auto;
     padding: 1rem;
-    height: auto; /* altura automática para mobile */
+  }
+
+  .logo {
+    max-height: 180px; /* reduz o logo em telas menores */
   }
 
   nav.menu ul {
     flex-direction: column;
-    width: 100%;
-    gap: 0;
-    margin-right: 0; /* remove o afastamento no mobile */
-  }
-
-  nav.menu li {
-    width: 100%;
+    align-items: center;
+    margin-right: 0;
+    gap: 1rem;
   }
 
   nav.menu a {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.1rem;
-    text-align: left;
+    font-size: 1.5rem; /* fonte ajustada pra mobile */
+    padding: 0.5rem 0.8rem;
   }
 
-  body {
-    padding-top: 200px; /* ajuste conforme necessidade */
+  main {
+    margin-top: 10px; /* reduz espaço no mobile */
+    padding: 10px 0;
   }
 }

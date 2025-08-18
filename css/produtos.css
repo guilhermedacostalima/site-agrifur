@@ -1,102 +1,3 @@
-/* ================== RESET E BODY ================== */
-body {
-  margin: 0;
-  padding-top: 110px; /* altura do header fixo */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #2e2e2e;
-  line-height: 1.6;
-  background-color: #f9f9f9;
-}
-
-/* ================== HEADER FIXO ================== */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 110px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 0 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  z-index: 9999;
-
-  /* fallback + imagem */
-  background-color: #000;
-  background-image: url('Imagens/NAV.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* ================== MENU ================== */
-nav.menu {
-  background: transparent;
-  margin: 0;
-}
-
-nav.menu ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  padding: 0;
-  margin: 0;
-  margin-right: 5rem;
-}
-
-nav.menu li {
-  margin: 0;
-}
-
-nav.menu a {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.5rem;
-  transition: background-color 0.3s ease;
-  border-radius: 6px;
-}
-
-nav.menu a:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-  color: #e0e7ff;
-}
-
-/* ================== RESPONSIVO HEADER ================== */
-@media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-    height: auto;
-  }
-
-  nav.menu ul {
-    flex-direction: column;
-    width: 100%;
-    gap: 0;
-    margin-right: 0;
-  }
-
-  nav.menu li {
-    width: 100%;
-  }
-
-  nav.menu a {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.1rem;
-    text-align: left;
-  }
-
-  body {
-    padding-top: 200px; /* ajuste para mobile */
-  }
-}
-
 /* ================== CONTEÚDO PRINCIPAL ================== */
 main {
   width: 90%;
@@ -135,7 +36,7 @@ h1.titulo-produtos {
   box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
 
-/* ESPAÇO PARA IMAGEM DO PRODUTO */
+/* ================== IMAGEM DO PRODUTO ================== */
 .produto-imagem {
   width: 100%;
   height: 180px;
@@ -149,7 +50,7 @@ h1.titulo-produtos {
   font-size: 1rem;
 }
 
-/* TEXTO DO PRODUTO */
+/* ================== TEXTO DO PRODUTO ================== */
 .produto-nome {
   font-size: 1.3rem;
   font-weight: bold;
@@ -169,7 +70,7 @@ h1.titulo-produtos {
   line-height: 1.4;
 }
 
-/* ================== RESPONSIVO MOBILE ================== */
+/* ================== RESPONSIVO ================== */
 @media (max-width: 600px) {
   h1.titulo-produtos {
     font-size: 1.5rem;
