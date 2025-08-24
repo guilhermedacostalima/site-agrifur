@@ -48,6 +48,15 @@ h1.titulo-produtos {
   justify-content: center;
   color: #999;
   font-size: 1rem;
+  overflow: hidden; /* importante para cortar o excesso da imagem */
+}
+
+.produto-imagem img {
+  width: 100%;        /* ocupa toda a largura do container */
+  height: 100%;       /* ocupa toda a altura do container */
+  object-fit: cover;  /* mantém proporção e corta o excesso */
+  display: block;     /* remove espaço extra abaixo da imagem */
+  border-radius: 8px; /* combina com o container */
 }
 
 /* ================== TEXTO DO PRODUTO ================== */
